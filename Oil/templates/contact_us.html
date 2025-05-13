@@ -126,10 +126,15 @@
         }
 
         @media (max-width: 480px) {
-            h2 {
-                font-size: 1.4rem;
+            @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
             }
 
+            .container {
+                padding: 15px;
+
+            }
             button {
                 font-size: 15px;
                 padding: 10px;
@@ -138,7 +143,23 @@
             input, textarea {
                 font-size: 0.95rem;
             }
+
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+
+            p, ul, .contact-info {
+                font-size: 0.95rem;
+            }
+
+            footer h2, footer h3 {
+                font-size: 1.1rem;
+            }
         }
+           
+
+            
     </style>
 </head>
 <body>
