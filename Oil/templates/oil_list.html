@@ -2,312 +2,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <title>Shrddha Oil Mill</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <title>Shrddha Oil Mill</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            background-color:rgb(225, 216, 216);
-            color: #333;
-            font-size: 16px; 
-        }
-        
-        .topnav {
-            background-color: #4CAF50;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            flex-wrap: wrap;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        .topnav .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            margin-right: auto;
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: rgb(225, 216, 216);
+      color: #333;
+      font-size: 16px;
+    }
 
-        .topnav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            padding: 10px 15px;
-            border-radius: 4px;
-        }
+    .topnav {
+      background-color: #4CAF50;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
 
-        .topnav a:hover {
-            background-color: white;
-            color: #4CAF50;
-        }
+    .topnav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      margin-right: auto;
+    }
 
-        .slider {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin: 40px auto;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+    .topnav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
 
-        .slides {
-            display: flex;
-            transition: opacity 1s ease-in-out;
-        }
+    .topnav a:hover {
+      background-color: white;
+      color: #4CAF50;
+    }
 
-        .slide {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 2 / 1;
-            opacity: 0;
-            position: absolute;
-            transition: opacity 1s ease-in-out;
-        }
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        .slide.active {
-            opacity: 1;
-            position: relative;
-        }
+    .slides {
+      display: flex;
+      transition: opacity 1s ease-in-out;
+    }
 
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-        }
+    .slide {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 2 / 1;
+      opacity: 0;
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+    }
 
-        .nav-buttons {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-            padding: 0 20px;
-        }
+    .slide.active {
+      opacity: 1;
+      position: relative;
+    }
 
-        .nav-buttons button {
-            background-color: rgba(0,0,0,0.5);
-            border: none;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
 
-        @keyframes slide {
-            0%, 20% { margin-left: 0%; }
-            25%, 45% { margin-left: -100%; }
-            50%, 70% { margin-left: -200%; }
-            75%, 95% { margin-left: -300%; }
-            100% { margin-left: 0%; }
-        }
+    .nav-buttons {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px 20px;
-            .products 
-                
-        }
+    .nav-buttons button {
+      background-color: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
-        .product-card {
-            background: white;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            width: 90%;
-            max-width: 250px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px 20px;
+    }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
+    .product-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
 
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 8px;
-        }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
 
-        .product-card p {
-            margin: 10px 0;
-            font-weight: bold;
-        }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
 
-        .quantity input {
-            width: 60px;
-            padding: 5px;
-            margin-top: 5px;
-            text-align: center;
-        }
+    .product-card p {
+      margin: 10px 0;
+      font-weight: bold;
+    }
 
-        .buy-btn {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    .quantity input {
+      width: 60px;
+      padding: 5px;
+      margin-top: 5px;
+      text-align: center;
+    }
 
-        .buy-btn:hover {
-            background-color: #388e3c;
-        }
+    .buy-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        
-        footer {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 16px;
-            margin-top: 40px;
-        }
+    .buy-btn:hover {
+      background-color: #388e3c;
+    }
 
-        @media (max-width: 480px) {
-            .slide {
-            height: 200px;
-            }
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 40px;
+    }
 
-            .product-card {
-            width: 100%;
-             }
+    @media (max-width: 480px) {
+      .slide {
+        height: 200px;
+      }
 
-            .topnav a {
-            padding: 5px;
-            font-size: 14px;
-            }
-        }
-
-    </style>
+      .topnav a {
+        padding: 5px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="topnav">
-        <span class="logo">Shrddha Oil Mill</span>
-        <a href="#home">Home</a>
-        <a href="/contact">Contact</a>
-        <a href="/about">About</a>
-        <a href="/login">login</a>
-        <a href="https://wa.me/919998474341" target="_blank">WhatsApp</a>
-    </div>
 
-<div class="slider">
+<body>
+  <div class="topnav">
+    <span class="logo">Shrddha Oil Mill</span>
+    <a href="#home">Home</a>
+    <a href="/contact">Contact</a>
+    <a href="/about">About</a>
+    <a href="/login">Login</a>
+    <a href="https://wa.me/919998474341" target="_blank">WhatsApp</a>
+  </div>
+
+  <div class="slider">
     <div class="slides">
-        <div class="slide active"><img src="{% static "bbb.jpg" %}" alt="Oil 1"></div>
-        <div class="slide"><img src="{% static "abc.jpg" %}" alt="Oil 2"></div>
-        
+      <div class="slide active"><img src="{% static 'bbb.jpg' %}" alt="Oil 1"></div>
+      <div class="slide"><img src="{% static 'abc.jpg' %}" alt="Oil 2"></div>
     </div>
     <div class="nav-buttons">
-        <button onclick="prevSlide()">&#10094;</button>
-        <button onclick="nextSlide()">&#10095;</button>
+      <button onclick="prevSlide()">&#10094;</button>
+      <button onclick="nextSlide()">&#10095;</button>
     </div>
-</div>
+  </div>
 
+  <div class="products">
+    <div class="product-card">
+      <img src="{% static '1l2.png' %}" alt="1 Litre">
+      <p>Groundnut Oil - 1 Litre</p>
+      <div class="quantity">
+        <input type="number" value="0" min="1" max="500">
+      </div>
+      <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%201L&price=200&img=1l2.png">
+        <button class="buy-btn">Add to Cart</button>
+      </a>
+    </div>
 
-<script>
+    <div class="product-card">
+      <img src="{% static '5l.png' %}" alt="5 Litre">
+      <p>Groundnut Oil - 5 Litre</p>
+      <div class="quantity">
+        <input type="number" value="0" min="1" max="500">
+      </div>
+      <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%205L&price=800&img=5l.png">
+        <button class="buy-btn">Add to Cart</button>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <img src="{% static '15l.png' %}" alt="15 Litre">
+      <p>Groundnut Oil - 15 Litre</p>
+      <div class="quantity">
+        <input type="number" value="0" min="1" max="500">
+      </div>
+      <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%2015L&price=1500&img=15l.png">
+        <button class="buy-btn">Add to Cart</button>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <img src="{% static '15kg.png' %}" alt="15 Kg">
+      <p>Groundnut Oil - 15 Kg</p>
+      <div class="quantity">
+        <input type="number" value="0" min="1" max="500">
+      </div>
+      <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%2015Kg&price=2800&img=15kg.png">
+        <button class="buy-btn">Add to Cart</button>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <h2 style="color:white;">Pure & Natural Oil Available...</h2>
+    <p>© 2025 Shrddha Oil Mil. All Rights Reserved.</p>
+    <h3 style="color:white;">📲 Contact Us on WhatsApp:</h3>
+    <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank" style="color:white;">
+      <b><i>👉 Click Here to Chat on WhatsApp</i></b>
+    </a>
+    <br><br>
+    <h3 style="color:white;">📞 Call Us:</h3>
+    <a href="tel:9998474341" style="color:white;">
+      <b><i>👉 Call Now: +91 99984 74341</i></b>
+    </a>
+  </footer>
+
+  <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
     function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            if (i === index) {
-                slide.classList.add('active');
-            }
-        });
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
     }
 
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
     }
 
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
     }
 
-    setInterval(nextSlide, 5000); // Auto-slide every 5 seconds
-</script>
-
-<div class="products">
-    <div class="product-card">
-        <img src="{% static '1l2.png' %}" alt="1 Litre">
-        <p>Groundnut Oil - 1 Litre</p>
-        <div class="quantity">
-            <input type="number" value="0" min="1" max="500">
-        </div>
-        <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%201L&price=200&img=1l2.png">
-
-            <button class="buy-btn">Add to Cart</button>
-        </a>
-        
-    </div>
-
-    <div class="product-card">
-        <img src="{% static '5l.png' %}" alt="5 Litre">
-        <p>Groundnut Oil - 5 Litre</p>
-        <div class="quantity">
-            <input type="number" value="0" min="1" max="500">
-        </div>
-        <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%205L&price=800&img=5l.png">
-            <button class="buy-btn">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-        <img src="{% static '15l.png' %}" alt="15 Litre">
-        <p>Groundnut Oil - 15 Litre</p>
-        <div class="quantity">
-            <input type="number" value="0" min="1" max="500">
-        </div>
-        <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%2015L&price=1500&img=15l.png">
-        <button class="buy-btn">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-        <img src="{% static '15kg.png' %}" alt="15 Kg">
-        <p>Groundnut Oil - 15 Kg</p>
-        <div class="quantity">
-            <input type="number" value="0" min="1" max="500">
-        </div>
-        <a href="{% url 'add_oil' %}?name=Groundnut%20Oil%2015Kg&price=2800&img=15kg.png">
-            <button class="buy-btn">Add to Cart</button>
-    </div>
-</div>
-
-<footer>
-
-    <h2 style="color:white;">Pure & Natural Oil Available...</h2>
-    <p>© 2025 Shrddha Oil Mil. All Rights Reserved.</p>
-
-    <h3 style="color:white;">📲 Contact Us on WhatsApp:</h3>
-    <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank" style="color:white;">
-        <b><i>👉 Click Here to Chat on WhatsApp</i></b>
-    </a>
-    <br><br>
-
-    <h3 style="color:white;">📞 Call Us:</h3>
-    <a href="tel:9998474341" style="color:white;">
-        <b><i>👉 Call Now: +91 99984 74341</i></b>
-    </a>
-</footer>
-
+    setInterval(nextSlide, 5000); 
+  </script>
 </body>
 </html>
