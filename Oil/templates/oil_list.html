@@ -21,33 +21,31 @@
       font-size: 16px;
     }
 
-    .topnav {
-      background-color: #4CAF50;
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
+    header {
+            background-color: #0F9D58;
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+        }
 
-    .topnav .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      margin-right: auto;
-    }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
 
-    .topnav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-      padding: 10px 15px;
-      border-radius: 4px;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            display: inline-block;
+        }
 
-    .topnav a:hover {
-      background-color: white;
-      color: #4CAF50;
-    }
+        nav a:hover {
+            background-color: #0F9D58;
+            border-radius: 5px;
+        }
 
     .slider {
       position: relative;
@@ -180,15 +178,18 @@
   </style>
 </head>
 
-<body>
-  <div class="topnav">
-    <span class="logo">Shrddha Oil Mill</span>
-    <a href="#home">Home</a>
-    <a href="/contact">Contact</a>
-    <a href="/about">About</a>
+<header>
+    <h1>Shrddha Oil Mil</h1>
+    <p>Pure and Quality Oil Provider</p>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact Us</a>
     <a href="/login">Login</a>
     <a href="https://wa.me/919998474341" target="_blank">WhatsApp</a>
-  </div>
+</nav>
 
   <div class="slider">
     <div class="slides">
