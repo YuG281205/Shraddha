@@ -5,52 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Shrddha Oil Mil</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
         }
+
         header {
             background-color: #0F9D58;
             color: white;
-            padding: 15px 0;
+            padding: 20px 10px;
             text-align: center;
         }
+
         nav {
             background-color: #333;
             padding: 10px;
             text-align: center;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             padding: 10px 15px;
+            display: inline-block;
         }
+
         nav a:hover {
             background-color: #0F9D58;
         }
+
         .container {
-            max-width: 1000px;
+            max-width: 960px;
+            width: 90%;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        h2 {
+
+        h2, h3 {
             color: #0F9D58;
         }
+
         p {
-            font-size: 18px;
+            font-size: 1rem;
             line-height: 1.6;
         }
+
+        ul {
+            padding-left: 20px;
+            font-size: 1rem;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .checklist li::before {
+            content: "✅ ";
+        }
+
+        .contact-info {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
         footer {
             text-align: center;
-            font-family: Copperplate;
-            padding: 10px;
+            padding: 20px;
             background-color: #4CAF50;
             color: white;
-            margin-top: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+
+            p, ul, .contact-info {
+                font-size: 0.95rem;
+            }
+
+            footer h2, footer h3 {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -65,66 +128,65 @@
     <a href="/">Home</a>
     <a href="/about">About Us</a>
     <a href="/contact">Contact Us</a>
-    <a href="/login">login</a>
+    <a href="/login">Login</a>
 </nav>
 
 <div class="container">
     <h2>About Us</h2>
     <p>
-        Welcome to <b>Shrddha Oil Mil</b>, your trusted source for pure and high-quality edible oils. 
+        Welcome to <strong>Shrddha Oil Mil</strong>, your trusted source for pure and high-quality edible oils.
         We specialize in providing a wide range of oils such as:
     </p>
 
     <ul>
-        <li>Groundnut Oil </li>
+        <li>Groundnut Oil</li>
     </ul>
 
     <p>
-        Our mission is to deliver 100% pure and natural oils to our customers without any 
-        chemicals or preservatives. Our products are extracted using traditional methods, 
+        Our mission is to deliver 100% pure and natural oils to our customers without any
+        chemicals or preservatives. Our products are extracted using traditional methods,
         ensuring the highest quality and health benefits.
     </p>
 
     <h3>Why Choose Us?</h3>
-    <pre>
-        ✅ 100% Pure and Natural Oil  
-        ✅ No Chemicals or Preservatives  
-        ✅ Direct from Farmers  
-        ✅ Affordable Prices  
-        ✅ Fast Delivery
-    </pre>
+    <ul class="checklist">
+        <li>100% Pure and Natural Oil</li>
+        <li>No Chemicals or Preservatives</li>
+        <li>Direct from Farmers</li>
+        <li>Affordable Prices</li>
+        <li>Fast Delivery</li>
+    </ul>
 
     <h3>Our Vision</h3>
     <p>
-        Our vision is to promote healthy living by providing pure and natural edible oils 
+        Our vision is to promote healthy living by providing pure and natural edible oils
         that support your overall health and well-being.
     </p>
 
     <h3>Contact Us</h3>
-    <pre>
-        📞 Phone: +91 99984 74341 
-        📧 Email: support@sharddhaoilmil.com  
-        📍 Address: Shrddha Oil Mil, Malapara,Botad, Gujarat.
-    </pre>
+    <div class="contact-info">
+        📞 Phone: +91 99984 74341 <br>
+        📧 Email: support@sharddhaoilmil.com <br>
+        📍 Address: Shrddha Oil Mil, Malapara, Botad, Gujarat.
+    </div>
 </div>
 
 <footer>
-
-    <h2 style="color:white;">Pure & Natural Oil Available...</h2>
+    <h2>Pure & Natural Oil Available...</h2>
     <p>© 2025 Shrddha Oil Mil. All Rights Reserved.</p>
 
-    <h3 style="color:white;">📲 Contact Us on WhatsApp:</h3>
-    <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank" style="color:white;">
-        <b><i>👉 Click Here to Chat on WhatsApp</i></b>
+    <h3>📲 Contact Us on WhatsApp:</h3>
+    <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank">
+        👉 Click Here to Chat on WhatsApp
     </a>
+
     <br><br>
 
-    <h3 style="color:white;">📞 Call Us:</h3>
-    <a href="tel:9998474341" style="color:white;">
-        <b><i>👉 Call Now: +91 99984 74341</i></b>
+    <h3>📞 Call Us:</h3>
+    <a href="tel:9998474341">
+        👉 Call Now: +91 99984 74341
     </a>
 </footer>
 
 </body>
 </html>
-

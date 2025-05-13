@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <title>Shrddha Oil Mill</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <style>
@@ -16,6 +17,7 @@
             margin: 0;
             background-color:rgb(225, 216, 216);
             color: #333;
+            font-size: 16px; 
         }
         
         .topnav {
@@ -49,7 +51,7 @@
         .slider {
             position: relative;
             width: 100%;
-            max-width: 1000px;
+            max-width: 100%;
             margin: 40px auto;
             overflow: hidden;
             border-radius: 12px;
@@ -62,8 +64,9 @@
         }
 
         .slide {
-            min-width: 1000px;
-            height: 500px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 2 / 1;
             opacity: 0;
             position: absolute;
             transition: opacity 1s ease-in-out;
@@ -109,18 +112,22 @@
         }
 
         .products {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
             padding: 40px 20px;
+            .products 
+                
         }
 
         .product-card {
             background: white;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            width: 250px;
+            width: 90%;
+            max-width: 250px;
             padding: 20px;
             text-align: center;
             transition: transform 0.3s;
@@ -174,16 +181,21 @@
             margin-top: 40px;
         }
 
-        @media (max-width: 768px) {
-            .slides img {
-                height: 250px;
+        @media (max-width: 480px) {
+            .slide {
+            height: 200px;
             }
 
             .product-card {
-                width: 90%;
-                
+            width: 100%;
+             }
+
+            .topnav a {
+            padding: 5px;
+            font-size: 14px;
             }
         }
+
     </style>
 </head>
 <body>

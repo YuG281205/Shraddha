@@ -2,46 +2,64 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Oil - Shrddha Oil Mill</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background:rgb(225, 216, 216);
+            background: rgb(225, 216, 216);
             padding: 20px;
+            margin: 0;
             text-align: center;
         }
 
         .container {
             background: #fff;
-            padding: 30px;
+            padding: 30px 20px;
             max-width: 500px;
+            width: 90%;
             margin: auto;
             border-radius: 12px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
         img {
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            max-width: 200px;
+            height: auto;
             object-fit: contain;
         }
 
         h2 {
             margin-top: 10px;
+            font-size: 1.5rem;
         }
 
         input[type="number"] {
-            width: 80px;
-            padding: 8px;
+            width: 100px;
+            padding: 10px;
             margin-top: 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
         }
 
         .total-box {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 1rem;
             background: #e0f2f1;
             padding: 15px;
             border-radius: 10px;
+            text-align: left;
+        }
+
+        .total-box p {
+            margin: 8px 0;
         }
 
         .pay-btn {
@@ -53,10 +71,31 @@
             border-radius: 8px;
             cursor: pointer;
             margin-top: 20px;
+            width: 100%;
         }
 
         .pay-btn:hover {
             background-color: #388e3c;
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .pay-btn {
+                font-size: 15px;
+                padding: 10px 20px;
+            }
+
+            input[type="number"] {
+                width: 80px;
+                font-size: 0.95rem;
+            }
+
+            .total-box {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
