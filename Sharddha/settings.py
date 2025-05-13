@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l=sa^cgt$zd4qp2(xp(+3dh!s80n8-(3e@y16i*5wr$l#e6meo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shraddha-10.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['shraddha-11.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -123,13 +123,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-import os 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Oil', 'static')]  # ✅ correct for development
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')           # ✅ required for deployment
+#import os 
+#STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Oil', 'static')]  # ✅ correct for development
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')           # ✅ required for deployment
 
     
+STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIR=[
+    os.path.join(BASE_DIR,'Oil','static')
+]
 
 
 
