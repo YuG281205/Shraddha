@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Oil - Shrddha Oil Mill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        h2 {
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            font-size: 18px;
+            background: #e0f2f1;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .pay-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .pay-btn:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% get_static_prefix as static_path %}
+        <img src="{{ static_path }}{{ request.GET.img }}" alt="Selected Oil">
+
+        <h2>{{ request.GET.name }}</h2>
+        <p><strong>Price per unit:</strong> ₹{{ request.GET.price }}</p>
+
+        <label for="qty">Quantity:</label>
+        <input type="number" id="qty" value="1" min="1" onchange="calculateTotal()">
+
+        <div class="total-box">
+            <p><strong>Subtotal:</strong> ₹<span id="subtotal"></span></p>
+            <p><strong>GST (5%):</strong> ₹<span id="gst"></span></p>
+            <p><strong>Delivery:</strong> ₹<span id="delivery">50</span></p>
+            <hr>
+            <p><strong>Total Payable:</strong> ₹<span id="total"></span></p>
+        </div>
+
+        <button class="pay-btn">Proceed to Pay</button>
+    </div>
+
+    <script>
+        const price = parseFloat("{{ request.GET.price }}");
+        const gstRate = 0.05;
+        const deliveryCharge = 50;
+
+        function calculateTotal() {
+            const qty = parseInt(document.getElementById('qty').value);
+            const subtotal = price * qty;
+            const gst = subtotal * gstRate;
+            const total = subtotal + gst + deliveryCharge;
+
+            document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+            document.getElementById('gst').innerText = gst.toFixed(2);
+            document.getElementById('total').innerText = total.toFixed(2);
+        }
+
+        window.onload = calculateTotal;
+    </script>
+</body>
+</html>

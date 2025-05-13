@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 0;
+            margin:0;
+        }
+        header {
+            background-color: #0F9D58;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        nav a:hover {
+            background-color: #0F9D58;
+            border-radius: 5px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: left;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        textarea {
+            height: 80px;
+        }
+        button {
+            background-color: #0F9D58;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color:rgb(36, 101, 70);
+        }
+        .success-message {
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            font-family: Copperplate;
+            padding: 10px;
+            background-color: #0F9D58;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color:white;font-size: 30px;">Shrddha Oil Mil</h1>
+        <p style="font-size: 18px;">Pure and Quality Oil Provider</p>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/login">Login</a>
+    </nav>
+
+    <div class="container">
+        <h1>Login Page</h1>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="{% if message.tags == 'error' %}error-message{% else %}success-message{% endif %}">
+                    {{ message }}
+                </p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="contact">Email or Phone:</label>
+            <input type="text" name="contact" required>
+
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <footer>
+        <h2>Pure & Natural Oil Available...</h2>
+        <p>© 2025 Shrddha Oil Mil. All Rights Reserved.</p>
+    
+        <h3 style="color:white;">📲 Contact Us on WhatsApp:</h3>
+        <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank" style="color:white;">
+            <b><i>👉 Click Here to Chat on WhatsApp</i></b>
+        </a>
+        <br><br>
+    
+        <h3 style="color:white;">📞 Call Us:</h3>
+        <a href="tel:9998474341" style="color:white;">
+            <b><i>👉 Call Now: +91 99984 74341</i></b>
+        </a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(243, 242, 242);
+            text-align: center;
+            padding: 0;
+            margin:0;
+        }
+        header {
+            background-color: #0F9D58;
+            color: white;
+            padding: 15px;
+            width :100%;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+        nav a:hover {
+            background-color: #0F9D58;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[readonly] {
+            background-color: #e9ecef;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 95%;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            font-family: Copperplate;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shrddha Oil Mil</h1>
+        <p>Pure and Quality Oil Provider</p>
+    </header>
+    
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <a href="/login">login</a>
+    </nav>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Name:</label>
+            <input type="text" name="name" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br>
+            <label>Phone:</label>
+            <input type="text" name="phone" required><br>
+            <label>Address:</label>
+            <input type="text" name="address" required><br>
+            <label>Quantity:</label>
+            <input type="number" name="quantity" required><br>
+            <label>Price:</label>
+            <input type="text" name="price" value="2500" readonly><br>
+            <label>Category:</label>
+            <input type="text" name="category" value="Groundnut" readonly><br>
+            <label>Message:</label>
+            <textarea name="message" required></textarea><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <footer>
+
+    <h2 style="color:white;">Pure & Natural Oil Available...</h2>
+    <p>© 2025 Shrddha Oil Mil. All Rights Reserved.</p>
+
+    <h3 style="color:white;">📲 Contact Us on WhatsApp:</h3>
+    <a href="https://wa.me/919998474341?text=Hello%20Shrddha%20Oil%20Mil,%20I%20need%20to%20inquire%20about%20your%20oil%20products." target="_blank" style="color:white;">
+        <b><i>👉 Click Here to Chat on WhatsApp</i></b>
+    </a>
+    <br><br>
+
+    <h3 style="color:white;">📞 Call Us:</h3>
+    <a href="tel:9998474341" style="color:white;">
+        <b><i>👉 Call Now: +91 99984 74341</i></b>
+    </a>
+</footer>
+</body>
+</html>
