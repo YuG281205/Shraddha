@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l=sa^cgt$zd4qp2(xp(+3dh!s80n8-(3e@y16i*5wr$l#e6meo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shraddha-14.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['shraddha-15.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -138,5 +138,5 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-
+ 
 
